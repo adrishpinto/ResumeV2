@@ -1,0 +1,107 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
+import react from "../assets/react.webp";
+import node from "../assets/node.png";
+import framermotion from "../assets/framer-motion.png";
+import tailwind from "../assets/tailwind.png";
+import css from "../assets/css.png";
+import javascript from "../assets/javascript.png";
+import mongodb from "../assets/mongodb.png";
+import java from "../assets/java.png";
+import github from "../assets/github.png";
+import moon from "../assets/moon.png";
+
+function StackItem({ text, img }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.45], [1, 1.23]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="mt-20 mx-12 my-10 border-[5px] border-gray-500 border-opacity-10 px-10 py-10 pb-8 rounded-2xl w-fit bg-gray-900 bg-opacity-80"
+      style={{ scale }}
+    >
+      <motion.img
+        whileHover={{ scale: 0.85 }}
+        src={img}
+        className="size-[170px]"
+        alt="React Logo"
+      />
+      <h1 className="text-center text-3xl font-light mt-2">{text}</h1>
+    </motion.div>
+  );
+}
+
+function Stack() {
+  const { scrollYProgress } = useScroll();
+  const moonY = useTransform(scrollYProgress, [0.05, 0.3], [0, 1000]);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.3,
+  });
+
+  return (
+    <div className="mb-20 relative">
+      <h1 className="text-5xl text-center mt-20 mx-auto w-fit">
+        <div className="text-[85px] hover:cursor-pointer font-bold">
+          <span className="hover:text-red-500 hover:transition duration-300">
+            M
+          </span>
+          <span className="hover:text-orange-500 hover:transition duration-300">
+            y
+          </span>
+          <span className="hover:text-yellow-500 hover:transition duration-300">
+            {" "}
+          </span>
+          <span className="hover:text-green-500 hover:transition duration-300">
+            S
+          </span>
+          <span className="hover:text-blue-500 hover:transition duration-300">
+            t
+          </span>
+          <span className="hover:text-indigo-500 hover:transition duration-300">
+            a
+          </span>
+          <span className="hover:text-purple-500 hover:transition duration-300">
+            c
+          </span>
+          <span className="hover:text-pink-500 hover:transition duration-300">
+            k
+          </span>
+        </div>
+      </h1>
+
+      {/* Parallax moon image */}
+      <div className="">
+        <motion.img
+          ref={ref}
+          src={moon}
+          className="absolute right-[30%] h-[700px] top-[-20%]"
+          style={{ y: moonY }}
+          alt="Moon"
+          initial={{ scale: 0 }}
+          animate={{ scale: inView ? 0.7 : 0.4 }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        />
+        <div className="flex mx-auto w-fit flex-wrap items-center justify-center relative mx-40">
+          <StackItem text="React" img={react} />
+          <StackItem text="FramerMotion" img={framermotion} />
+          <StackItem text="css" img={css} />
+          <StackItem text="Nodejs" img={node} />
+          <StackItem text="Tailwindcss" img={tailwind} />
+          <StackItem text="JavaScript" img={javascript} />
+          <StackItem text="MongoDB" img={mongodb} />
+          <StackItem text="Java" img={java} />
+          <StackItem text="GitHub" img={github} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Stack;

@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@font-face {
+  font-family: "Larsseit";
+  src:
+    url("./assets/fonts/Larsseit-Regular.ttf") format("truetype"),
+    url("./assets/fonts/Larsseit-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  color: white;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+
+.roboto {
+  font-family: "Roboto";
+}
+
+.custom-hover-effect {
+  position: relative;
+  padding: 5px;
+  z-index: 1;
+}
+
+.custom-hover-effect::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #06b6d4;
+  transition: 0.5s ease;
+  z-index: -1;
+}
+
+.custom-hover-effect:hover::before {
+  left: 0;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  animation: animateBg 50s linear infinite;
+  z-index: 0;
+}
+
+@keyframes animateBg {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5px;
+  height: 0.5px;
+  background: #fff;
+  border-radius: 50%;
+  animation: animate 3s linear infinite;
+}
+@media (max-width: 768px) {
+  .star {
+    animation: none;
+  }
+}
+
+.star::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.star:nth-child(1) {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+
+.star:nth-child(2) {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+
+.star:nth-child(3) {
+  top: 80px;
+  right: 0px;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+
+.star:nth-child(4) {
+  top: 0;
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+}
+
+.star:nth-child(5) {
+  top: 0;
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+
+.star:nth-child(6) {
+  top: 0;
+  right: 600px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+.star:nth-child(7) {
+  top: 300px;
+  right: 0px;
+  left: initial;
+  animation-delay: 1.2s;
+  animation-duration: 1.75s;
+}
+
+.star:nth-child(8) {
+  top: 0px;
+  right: 700px;
+  left: initial;
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+}
+
+.star:nth-child(9) {
+  top: 0px;
+  right: 1000px;
+  left: initial;
+  animation-delay: 0.75s;
+  animation-duration: 2.25s;
+}
+
+.star:nth-child(10) {
+  top: 0px;
+  right: 450px;
+  left: initial;
+  animation-delay: 2.75s;
+  animation-duration: 2.75s;
+}
+/* star background*/
+
+/* StarryBackground.css */
+.starry-background {
+  background-color: red;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.star2 {
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* hover text */
+.text-hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.text-hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.text-hover:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+* {
+  box-sizing: border-box;
+}
+.changing-background {
+  overflow: auto;
+  background: linear-gradient(
+    210deg,
+    rgba(8, 252, 98, 1) 1%,
+    rgba(0, 212, 255, 1) 38%,
+    rgba(139, 0, 185, 1) 70%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 300%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.tech-box {
+  background-color: black;
+  border-radius: 10px;
+  position: relative;
+  border: 2px solid var(--bg-color);
+}
+.tech-box::after {
+  content: "";
+  display: inline-block;
+  height: calc(90% + 0px);
+  width: calc(90% + 0px);
+  border-radius: 10px;
+  background-color: var(--after-bg-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  z-index: -1;
+}
+.tech-box::after {
+  filter: blur(1.5rem);
+  opacity: 100%;
+}
+
+.tech-list::before {
+  content: "○";
+  color: white;
+  margin-right: 5px;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.glitch::before {
+  text-shadow: -3px 0 #ff00c1;
+}
+
+.glitch::after {
+  text-shadow: 3px 0 #00fff9;
+  animation: glitch-2 2s linear alternate-reverse;
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: inset(15% 0 40% 0);
+  }
+  20% {
+    clip-path: inset(8% 0 40% 0);
+  }
+  40% {
+    clip-path: inset(50% 0 12% 0);
+  }
+  60% {
+    clip-path: inset(30% 0 60% 0);
+  }
+  80% {
+    clip-path: inset(80% 0 10% 0);
+  }
+  100% {
+    clip-path: inset(10% 0 85% 0);
+  }
+}
+
+.bullet {
+  position: relative;
+}
+
+.bullet::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  font-size: 2rem;
+  color: inherit;
+  border: none;
+}
