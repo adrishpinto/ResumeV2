@@ -42,20 +42,18 @@ function About({ isActive }) {
           <MainTitle />
           <div className="flex w-[100%] flex-col sm:mt-40 sm:flex-row lg:mt-0">
             <TypingEffectTitle />
-            <div className="mr-0 flex flex-col lg:mr-14">
-              <div className="flex items-center">
-                <div
-                  className="flex cursor-pointer items-center underline"
-                  onClick={() => {
-                    navigator.clipboard.writeText("8618412881"),
-                      alert("phone no Copied.");
-                  }}
-                >
-                  <FaPhoneAlt />
-                  <h1 className="ml-2 text-xl">8618412881</h1>
-                </div>
+            <div className="mr-0 mt-10 flex flex-col lg:mr-14">
+              <div
+                className="mx-auto flex w-40 items-center underline sm:justify-start"
+                onClick={() => {
+                  navigator.clipboard.writeText("8618412881"),
+                    alert("phone no Copied.");
+                }}
+              >
+                <FaPhoneAlt />
+                <h1 className="ml-2 text-xl">8618412881</h1>
               </div>
-              <div className="flex items-center">
+              <div className="mx-auto flex w-40 items-center underline sm:justify-start">
                 <a
                   href="https://github.com/adrishpinto"
                   target="_blank"
@@ -66,7 +64,7 @@ function About({ isActive }) {
                   <h1 className="ml-2 text-xl underline">GitHub</h1>
                 </a>
               </div>
-              <div className="flex items-center">
+              <div className="mx-auto flex w-40 items-center underline sm:justify-start">
                 <a
                   href="https://www.linkedin.com/in/joshuakamathpinto/"
                   target="_blank"
