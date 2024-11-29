@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import EducationCard from "../components/EducationCard";
 import EducationCardSlide from "../components/EducationCardSlide";
+import ColorGrid from "../components/ColorGrid";
 import project1 from "../assets/project1.png";
 const Education = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="h-[150vh] sm:h-[70vh]">
+    <div className="h-full bg-black sm:h-full">
       <div className="mb-20 mt-10 text-center text-5xl font-bold leading-3 sm:text-7xl">
         Education
       </div>
@@ -15,7 +16,7 @@ const Education = () => {
         <div className="mb-8 mt-2 block w-full text-center text-3xl font-thin">
           Click on Cards to view more information.
         </div>
-        <div className="mb-10 flex h-full w-full flex-col items-center justify-center gap-5 space-y-5 bg-black sm:mt-0 sm:flex-row sm:space-y-0">
+        <div className="mb-40 flex h-full w-full flex-col items-center justify-center gap-5 space-y-5 bg-black sm:mt-0 sm:flex-row sm:space-y-0">
           <EducationCardSlide
             name="Imarticus Course"
             bg="bg-gradient-to-r from-cyan-600 to-indigo-600"
@@ -56,6 +57,9 @@ const Education = () => {
             visible={visible}
             setVisible={setVisible}
           />
+        </div>
+        <div className="">
+          <ColorGrid />
         </div>
       </div>
     </div>

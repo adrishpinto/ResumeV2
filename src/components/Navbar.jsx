@@ -44,7 +44,7 @@ const Navbar = ({
 
   const MobileMenuItem = ({ children, onClick }) => (
     <motion.button
-      className="blclickk w-full p-4 text-left transition-colors duration-200 hover:bg-gray-900"
+      className="blclickk prounded-3xlext-left w-full outline-none transition-colors duration-200 hover:bg-gray-900 focus:bg-blue-800"
       onClick={() => {
         onClick();
         setNavExpand(false);
@@ -119,31 +119,31 @@ const Navbar = ({
       <div className="hidden justify-center sm:flex">
         <div className="flex space-x-4 rounded-full bg-gray-900 bg-opacity-50 px-6 py-2">
           <button
-            className="rounded-full px-3 py-1 text-white transition-colors hover:bg-gray-900"
+            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
             onClick={scrollHandler(scrollAbout)}
           >
             About
           </button>
           <button
-            className="rounded-full px-3 py-1 text-white transition-colors hover:bg-gray-900"
+            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
             onClick={scrollHandler(scrollTech)}
           >
             Technical
           </button>
           <button
-            className="rounded-full px-3 py-1 text-white transition-colors hover:bg-gray-900"
+            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
             onClick={scrollHandler(scrollProjects)}
           >
             Projects
           </button>
           <button
-            className="rounded-full px-3 py-1 text-white transition-colors hover:bg-gray-900"
+            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
             onClick={scrollHandler(scrollExperience)}
           >
             Experience
           </button>
           <button
-            className="rounded-full px-3 py-1 text-white transition-colors hover:bg-gray-900"
+            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
             onClick={scrollHandler(scrollEducation)}
           >
             Education

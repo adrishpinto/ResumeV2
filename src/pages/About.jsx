@@ -37,8 +37,9 @@ function About({ isActive }) {
 
   return (
     <motion.div>
-      <div className="mx-4 mt-10 sm:mx-40 sm:mt-0 sm:h-full">
-        <div className="flex flex-col sm:items-start">
+      <div className="mx-4 mt-10 bg-black sm:mx-40 sm:mt-0 sm:h-full">
+        <div className="invisible">.</div>
+        <div className="mt-20 flex flex-col sm:items-start">
           <MainTitle />
           <div className="flex w-[100%] flex-col sm:mt-40 sm:flex-row lg:mt-0">
             <TypingEffectTitle />
@@ -138,7 +139,7 @@ function About({ isActive }) {
               This website is developed from scratch. The goal was to create a
               central platform to showcase my projects and provide an easier way
               to explore my information beyond the limits of a traditional
-              resume. 
+              resume.
             </motion.div>
           </motion.div>
         </div>
