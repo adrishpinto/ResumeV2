@@ -102,12 +102,10 @@ function About({ isActive }) {
             animate={firstInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0 }}
           >
-            Hi, I'm Joshua, a Full-Stack Developer from Bangalore. I’m
-            passionate about problem-solving and creative design, and I love how
-            both frontend and backend development let me explore these areas.
-            I’m always excited to come up with cool, user-friendly solutions,
-            and I’m constantly looking for ways to learn and get better at what
-            I do.
+            Hi, I'm Joshua, a Full-Stack Developer from Bangalore. I have great
+            intrests in problem-solving and creative design, and both frontend
+            and backend development let me explore these areas and I feel that's
+            why I have a great passion for full-stack dev.
           </motion.div>
         </motion.div>
 
@@ -137,10 +135,10 @@ function About({ isActive }) {
               }
               transition={{ duration: 0.5, delay: 0 }}
             >
-              I developed this website from scratch using the MERN stack. The
-              goal was to create a central platform to showcase my projects and
-              provide an easier way to explore my information beyond the
-              limitations of a traditional resume.
+              This website is developed from scratch. The goal was to create a
+              central platform to showcase my projects and provide an easier way
+              to explore my information beyond the limits of a traditional
+              resume. 
             </motion.div>
           </motion.div>
         </div>

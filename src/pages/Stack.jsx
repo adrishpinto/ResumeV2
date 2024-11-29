@@ -11,6 +11,7 @@ import mongodb from "../assets/mongodb.png";
 import java from "../assets/java.png";
 import github from "../assets/github.png";
 import moon from "../assets/moon.png";
+import express from "../assets/express.png";
 
 function StackItem({ text, img }) {
   const ref = useRef(null);
@@ -118,7 +119,7 @@ function Stack() {
           <StackItem text="JavaScript" img={javascript} />
           <StackItem text="MongoDB" img={mongodb} />
           <StackItem text="Java" img={java} />
-          <StackItem text="GitHub" img={github} />
+          <StackItem text="Express" img={express} />
         </div>
 
         <div className="sm:hidden">
@@ -130,7 +131,7 @@ function Stack() {
           <StackItemSM text="JavaScript" img={javascript} />
           <StackItemSM text="MongoDB" img={mongodb} />
           <StackItemSM text="Java" img={java} />
-          <StackItemSM text="GitHub" img={github} />
+          <StackItem text="Express" img={express} />
         </div>
       </div>
     </div>
