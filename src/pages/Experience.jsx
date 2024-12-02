@@ -108,7 +108,7 @@ function Experience() {
             projects, and a final exam. Upon successful completion, I was
             awarded a certificate and gained access to additional resources.
           </p>
-          <div
+          {/* <div
             onClick={() => setCertificate((prev) => !prev)}
             className="mx-auto mt-6 w-fit border px-2 py-1 hover:cursor-pointer hover:bg-gray-900 md:mx-0"
           >
@@ -123,7 +123,7 @@ function Experience() {
                 <img src={resume} alt="Resume Certificate" />
               </div>
             </div>
-          )}
+          )} */}
         </p>
       </motion.div>
     </motion.div>

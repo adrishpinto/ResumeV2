@@ -30,7 +30,7 @@ function ColorGrid() {
   }
 
   return (
-    <div className="mx-auto mt-16 flex h-[10vh] w-full flex-wrap justify-start overflow-hidden bg-black">
+    <div className="mx-auto mt-16 flex h-[10vh] w-full flex-wrap items-center justify-start justify-center overflow-hidden bg-black">
       {boxes}
     </div>
   );
