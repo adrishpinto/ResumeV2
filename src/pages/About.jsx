@@ -43,7 +43,7 @@ function About({ isActive }) {
           <MainTitle />
           <div className="flex w-[100%] flex-col sm:flex-row lg:mt-0">
             <TypingEffectTitle />
-            <div className="mr-0 mt-10 flex flex-col lg:mr-14">
+            <div className="ml-[30px] mr-0 mt-10 flex flex-col sm:ml-0 lg:mr-14">
               <div
                 className="mx-auto flex w-40 items-center underline sm:justify-start"
                 onClick={() => {
@@ -87,7 +87,7 @@ function About({ isActive }) {
           animate={firstInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="mt-[-20px] w-1/2">
+          <div className="mt-[-20px] sm:w-1/2">
             {firstInView && (
               <TypingEffect
                 text="About me"

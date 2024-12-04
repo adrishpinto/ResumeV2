@@ -1,6 +1,12 @@
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import react from "../assets/react.webp";
 import node from "../assets/node.png";
 import framermotion from "../assets/framer-motion.png";
@@ -13,7 +19,8 @@ import github from "../assets/github.png";
 import moon from "../assets/moon.png";
 import express from "../assets/express.png";
 
-function StackItem({ text, img }) {
+function StackItem({ text, img, desc }) {
+  const [flip, setFlip] = useState(1);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -29,30 +36,55 @@ function StackItem({ text, img }) {
   const scale1 = useTransform(delayedScrollYProgress, [0, 0.6], [1.1, 1.25]);
 
   return (
-    <motion.div
-      ref={ref}
-      className="mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8"
-      style={{ scale: scale1 }}
-    >
-      <motion.img
-        whileHover={{ scale: 0.85 }}
-        src={img}
-        className="size-[170px]"
-        alt="React Logo"
-      />
-      <h1 className="mt-2 text-center text-3xl font-light">{text}</h1>
-    </motion.div>
+    <div>
+      <AnimatePresence>
+        <motion.div
+          ref={ref}
+          className={`${!flip && "bg-opacity-40"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8`}
+          style={{ scale: scale1 }}
+          onClick={() => setFlip((prev) => !prev)}
+        >
+          <motion.img
+            whileHover={{ scale: 0.85 }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: flip ? 1 : 0 }}
+            src={img}
+            className="size-[170px] hover:scale-75 hover:cursor-pointer"
+            alt="React Logo"
+          />
+          <motion.p
+            className={`absolute left-1/2 top-1/2 w-[80%] -translate-x-1/2 -translate-y-1/2 transform text-2xl font-thin hover:cursor-pointer`}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: flip ? 0 : 1,
+              visibility: flip ? "hidden" : "visible",
+            }}
+          >
+            {desc}
+          </motion.p>
+
+          <motion.h1
+            className="mt-2 text-center text-3xl font-light"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: flip ? 1 : 0 }}
+          >
+            {text}
+          </motion.h1>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }
 
-function StackItemSM({ text, img }) {
+function StackItemSM({ text, img, desc }) {
+  const [flip, setFlip] = useState(1);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const scale2 = useTransform(scrollYProgress, [0, 0.6], [1.1, 1.2]);
 
+  const scale2 = useTransform(scrollYProgress, [0, 0.6], [1.1, 1.2]);
   const delayedScrollYProgress = useSpring(scrollYProgress, {
     stiffness: 80,
     damping: 20,
@@ -66,16 +98,34 @@ function StackItemSM({ text, img }) {
       ref={ref}
       className="mx-12 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8"
       style={{ scale: scale2 }}
+      onClick={() => setFlip((prev) => !prev)}
     >
       <motion.img
         whileHover={{ scale: 0.85 }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: flip ? 1 : 0 }}
         src={img}
         className="size-[150px] sm:size-[170px]"
-        alt="React Logo"
+        alt={text}
       />
-      <h1 className="mt-2 text-center text-xl font-light sm:text-3xl">
+      <motion.p
+        className={`absolute left-1/2 top-1/2 w-[80%] -translate-x-1/2 -translate-y-1/2 transform text-2xl font-thin hover:cursor-pointer`}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: flip ? 0 : 1,
+          visibility: flip ? "hidden" : "visible",
+        }}
+      >
+        {desc}
+      </motion.p>
+
+      <motion.h1
+        className="mt-2 text-center text-xl font-light sm:text-3xl"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: flip ? 1 : 0 }} // Hide text when flipped
+      >
         {text}
-      </h1>
+      </motion.h1>
     </motion.div>
   );
 }
@@ -111,27 +161,99 @@ function Stack() {
           </span>
         </div>
         <div className="relative mx-auto hidden w-[80%] flex-wrap items-center justify-center sm:flex">
-          <StackItem text="React" img={react} />
-          <StackItem text="FramerMotion" img={framermotion} />
-          <StackItem text="css" img={css} />
-          <StackItem text="Nodejs" img={node} />
-          <StackItem text="Tailwindcss" img={tailwind} />
-          <StackItem text="JavaScript" img={javascript} />
-          <StackItem text="MongoDB" img={mongodb} />
-          <StackItem text="Java" img={java} />
-          <StackItem text="Express" img={express} />
+          <StackItem
+            text="React"
+            img={react}
+            desc="A JavaScript library for building user interfaces"
+          />
+          <StackItem
+            text="FramerMotion"
+            img={framermotion}
+            desc="A library for animations in React"
+          />
+          <StackItem
+            text="CSS"
+            img={css}
+            desc="A stylesheet language used for designing web pages"
+          />
+          <StackItem
+            text="Node.js"
+            img={node}
+            desc="A JavaScript runtime for server-side programming"
+          />
+          <StackItem
+            text="TailwindCSS"
+            img={tailwind}
+            desc="A utility-first CSS framework for rapid UI development"
+          />
+          <StackItem
+            text="JavaScript"
+            img={javascript}
+            desc="programming language for web development"
+          />
+          <StackItem
+            text="MongoDB"
+            img={mongodb}
+            desc="A NoSQL database for modern web applications"
+          />
+          <StackItem
+            text="Java"
+            img={java}
+            desc="A versatile, object-oriented programming language"
+          />
+          <StackItem
+            text="Express"
+            img={express}
+            desc="A web framework for Node.js to build APIs"
+          />
         </div>
 
         <div className="sm:hidden">
-          <StackItemSM text="React" img={react} />
-          <StackItemSM text="FramerMotion" img={framermotion} />
-          <StackItemSM text="css" img={css} />
-          <StackItemSM text="Nodejs" img={node} />
-          <StackItemSM text="Tailwindcss" img={tailwind} />
-          <StackItemSM text="JavaScript" img={javascript} />
-          <StackItemSM text="MongoDB" img={mongodb} />
-          <StackItemSM text="Java" img={java} />
-          <StackItem text="Express" img={express} />
+          <StackItemSM
+            text="React"
+            img={react}
+            desc="A JavaScript library for building user interfaces"
+          />
+          <StackItemSM
+            text="FramerMotion"
+            img={framermotion}
+            desc="A library for animations in React"
+          />
+          <StackItemSM
+            text="CSS"
+            img={css}
+            desc="A stylesheet language used for designing web pages"
+          />
+          <StackItemSM
+            text="Node.js"
+            img={node}
+            desc="A JavaScript runtime for server-side programming"
+          />
+          <StackItemSM
+            text="TailwindCSS"
+            img={tailwind}
+            desc="A utility-first CSS framework for rapid UI development"
+          />
+          <StackItemSM
+            text="JavaScript"
+            img={javascript}
+            desc="A programming language for web development"
+          />
+          <StackItemSM
+            text="MongoDB"
+            img={mongodb}
+            desc="A NoSQL database for modern web applications"
+          />
+          <StackItemSM
+            text="Java"
+            img={java}
+            desc="A versatile, object-oriented programming language"
+          />
+          <StackItemSM
+            text="Express"
+            img={express}
+            desc="A web framework for Node.js to build APIs"
+          />
         </div>
       </div>
     </div>
