@@ -37,7 +37,7 @@ function About({ isActive }) {
 
   return (
     <motion.div>
-      <div className="mx-4 mt-10 bg-black sm:mx-40 sm:mt-0 sm:h-full">
+      <div className="mx-4 bg-black sm:mx-40 sm:mt-0 sm:h-full">
         <div className="invisible">.</div>
         <div className="mt-20 flex flex-col sm:items-start">
           <MainTitle />
