@@ -40,7 +40,7 @@ function StackItem({ text, img, desc }) {
       <AnimatePresence>
         <motion.div
           ref={ref}
-          className={`${!flip && "bg-opacity-40"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8`}
+          className={`${flip == 1 ? "bg-gray-900 bg-opacity-80" : "bg-gray-900 bg-opacity-30"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 px-10 py-10 pb-8`}
           style={{ scale: scale1 }}
           onClick={() => setFlip((prev) => !prev)}
         >
@@ -95,7 +95,7 @@ function StackItemSM({ text, img, desc }) {
 
   return (
     <motion.div
-      className={`${!flip && "bg-black bg-opacity-40"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8`}
+      className={`${flip == 1 ? "bg-gray-900 bg-opacity-80" : "bg-gray-900 bg-opacity-30"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 px-10 py-10 pb-8`}
       ref={ref}
       style={{ scale: scale2 }}
       onClick={() => setFlip((prev) => !prev)}
@@ -167,19 +167,9 @@ function Stack() {
             desc="A JavaScript library for building user interfaces"
           />
           <StackItem
-            text="FramerMotion"
-            img={framermotion}
-            desc="A library for animations in React"
-          />
-          <StackItem
             text="CSS"
             img={css}
             desc="A stylesheet language used for designing web pages"
-          />
-          <StackItem
-            text="Node.js"
-            img={node}
-            desc="A JavaScript runtime for server-side programming"
           />
           <StackItem
             text="TailwindCSS"
@@ -187,24 +177,37 @@ function Stack() {
             desc="A utility-first CSS framework for rapid UI development"
           />
           <StackItem
+            text="FramerMotion"
+            img={framermotion}
+            desc="A library for animations in React"
+          />
+          <StackItem
             text="JavaScript"
             img={javascript}
             desc="programming language for web development"
           />
+
+          <StackItem
+            text="Node.js"
+            img={node}
+            desc="A JavaScript runtime for server-side programming"
+          />
+
           <StackItem
             text="MongoDB"
             img={mongodb}
             desc="A NoSQL database for modern web applications"
           />
-          <StackItem
-            text="Java"
-            img={java}
-            desc="A versatile, object-oriented programming language"
-          />
+
           <StackItem
             text="Express"
             img={express}
             desc="A web framework for Node.js to build APIs"
+          />
+          <StackItem
+            text="Java"
+            img={java}
+            desc="A versatile, object-oriented programming language"
           />
         </div>
 
