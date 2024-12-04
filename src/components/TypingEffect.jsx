@@ -37,7 +37,7 @@ const TypingEffect = ({ text, speed, delay }) => {
   }, []);
 
   return (
-    <h1 className="mt-5 flex items-center justify-center text-center text-4xl font-thin text-white sm:text-left">
+    <h1 className="mt-5 flex items-center justify-center text-center text-2xl font-thin text-white sm:text-left sm:text-4xl">
       {displayedText}
     </h1>
   );

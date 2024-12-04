@@ -40,7 +40,7 @@ function StackItem({ text, img, desc }) {
       <AnimatePresence>
         <motion.div
           ref={ref}
-          className={`${!flip && "bg-opacity-30"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8`}
+          className={`${!flip && "bg-opacity-40"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 bg-gray-900 bg-opacity-80 px-10 py-10 pb-8`}
           style={{ scale: scale1 }}
           onClick={() => setFlip((prev) => !prev)}
         >

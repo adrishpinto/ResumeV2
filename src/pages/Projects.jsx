@@ -166,7 +166,7 @@ const ImageMap = () => {
   return (
     <div className="roboto mt-[120px] flex min-h-screen flex-col items-center overflow-x-visible bg-black">
       <section
-        className={`sticky top-[70px] mb-[200px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
+        className={`sticky top-[70px] mb-[220px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
       >
         PROJECTS
       </section>

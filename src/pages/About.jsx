@@ -82,7 +82,7 @@ function About({ isActive }) {
         {/* about me */}
         <motion.div
           ref={firstRef}
-          className="mt-10 flex flex-col items-center rounded-2xl bg-gray-700 bg-opacity-50 px-5 py-2 text-center sm:mt-32 sm:h-fit md:flex-row md:px-5 md:py-7"
+          className="mx-3 mt-10 flex flex-col items-center rounded-2xl bg-gray-700 bg-opacity-50 px-5 py-2 text-center sm:mt-32 sm:h-fit md:flex-row md:px-5 md:py-7"
           initial={{ opacity: 0 }}
           animate={firstInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1 }}
@@ -113,7 +113,7 @@ function About({ isActive }) {
         {/* about site  */}
         <div ref={secondRef}>
           <motion.div
-            className="mt-20 flex flex-col items-center rounded-2xl bg-gray-700 bg-opacity-50 px-5 py-2 text-center md:flex-row md:px-5 md:py-10"
+            className="mx-3 mt-20 flex flex-col items-center rounded-2xl bg-gray-700 bg-opacity-50 px-5 py-2 text-center md:flex-row md:px-5 md:py-10"
             initial={{ opacity: 0 }}
             animate={secondInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1 }}
@@ -129,7 +129,7 @@ function About({ isActive }) {
               )}
             </div>
             <motion.div
-              className="mt-8 block w-full pb-7 text-left text-lg font-[100] sm:pb-0 sm:pr-10 sm:text-2xl md:mt-0 md:w-1/2"
+              className="mt-4 block w-full pb-7 text-left text-lg font-[100] sm:pb-0 sm:pr-10 sm:text-2xl md:mt-0 md:w-1/2"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 secondInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
