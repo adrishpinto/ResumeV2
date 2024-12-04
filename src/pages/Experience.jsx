@@ -12,7 +12,7 @@ function Experience() {
   const [certificate, setCertificate] = useState(0);
 
   return (
-    <motion.div className="relative mb-24">
+    <motion.div className="relative mb-10 pt-20 sm:pt-0">
       <div className="mt-2 text-center text-5xl font-semibold tracking-tighter sm:text-[80px] md:text-[110px]">
         EXPERIENCE
       </div>

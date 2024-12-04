@@ -8,7 +8,7 @@ const Education = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="h-full bg-black sm:h-full">
+    <div className="h-full bg-black pt-20 sm:h-full sm:pt-0">
       <div className="mb-20 mt-10 text-center text-5xl font-bold leading-3 sm:text-7xl">
         Education
       </div>
