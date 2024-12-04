@@ -41,7 +41,7 @@ function About({ isActive }) {
         <div className="invisible">.</div>
         <div className="mt-20 flex flex-col sm:items-start">
           <MainTitle />
-          <div className="flex w-[100%] flex-col sm:mt-40 sm:flex-row lg:mt-0">
+          <div className="flex w-[100%] flex-col sm:flex-row lg:mt-0">
             <TypingEffectTitle />
             <div className="mr-0 mt-10 flex flex-col lg:mr-14">
               <div

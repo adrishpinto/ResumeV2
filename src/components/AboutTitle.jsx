@@ -1,12 +1,24 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 function MainTitle() {
+  const ref = useRef(null);
+  const view = useInView(ref, {
+    amount: 0.5,
+  });
+
   return (
     <motion.h1
-      className="glitch tracking-3 z-10 mx-auto mb-24 w-[60%] stroke-orange-300 text-center font-mono text-[50px] font-semibold text-white sm:mb-0 sm:text-[10vw] md:w-[100%]"
-      data-text="JOSHUA PINTO"
+      ref={ref}
+      className="tracking-1 z-10 mx-auto w-[60%] stroke-orange-300 text-center font-mono text-[50px] font-semibold text-white sm:mb-0 sm:text-[10vw] md:w-[100%]"
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      animate={{
+        opacity: view ? 1 : 0,
+        filter: view ? "blur(0px)" : "blur(10px)",
+      }}
+      transition={{ duration: 1 }}
     >
-      .
+      Joshua Pinto
     </motion.h1>
   );
 }
