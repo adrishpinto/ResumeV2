@@ -26,12 +26,12 @@ function About({ isActive }) {
   }, []);
 
   const { ref: firstRef, inView: firstInView } = useInView({
-    threshold: 0.1,
+    threshold: 0.4,
     triggerOnce: once,
   });
 
   const { ref: secondRef, inView: secondInView } = useInView({
-    threshold: 0.1,
+    threshold: 0.5,
     triggerOnce: once,
   });
 
@@ -98,7 +98,7 @@ function About({ isActive }) {
             )}
           </div>
           <motion.div
-            className="mt-4 block w-full text-left text-lg font-[100] sm:pr-10 sm:text-2xl md:w-1/2"
+            className="mt-4 block w-full pb-5 text-left text-lg font-[100] sm:pr-10 sm:text-2xl md:w-1/2"
             initial={{ opacity: 0, y: 20 }}
             animate={firstInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0 }}
@@ -129,7 +129,7 @@ function About({ isActive }) {
               )}
             </div>
             <motion.div
-              className="mt-8 block w-full text-left text-lg font-[100] sm:pr-10 sm:text-2xl md:mt-0 md:w-1/2"
+              className="mt-8 block w-full pb-7 text-left text-lg font-[100] sm:pb-0 sm:pr-10 sm:text-2xl md:mt-0 md:w-1/2"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 secondInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
