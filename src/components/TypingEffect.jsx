@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const TypingEffect = ({ text, speed, delay }) => {
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState(text[0]);
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {

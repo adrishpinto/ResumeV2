@@ -95,7 +95,7 @@ function StackItemSM({ text, img, desc }) {
 
   return (
     <motion.div
-      className={`${flip == 1 ? "bg-gray-900 bg-opacity-80" : "bg-gray-900 bg-opacity-30"} mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 px-10 py-10 pb-8`}
+      className={`${flip == 1 ? "bg-gray-900 bg-opacity-80" : "bg-gray-900 bg-opacity-30"} relative mx-12 my-10 mt-20 w-fit rounded-2xl border-[5px] border-gray-500 border-opacity-10 px-10 py-10 pb-8`}
       ref={ref}
       style={{ scale: scale2 }}
       onClick={() => setFlip((prev) => !prev)}
@@ -122,7 +122,7 @@ function StackItemSM({ text, img, desc }) {
       <motion.h1
         className="mt-2 text-center text-xl font-light sm:text-3xl"
         initial={{ opacity: 1 }}
-        animate={{ opacity: flip ? 1 : 0 }} // Hide text when flipped
+        animate={{ opacity: flip ? 1 : 0 }}
       >
         {text}
       </motion.h1>
