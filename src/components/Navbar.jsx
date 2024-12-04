@@ -57,7 +57,7 @@ const Navbar = ({
 
   return (
     <motion.div
-      className="fixed left-0 right-0 top-0 z-50 bg-black p-2"
+      className="fixed left-0 right-0 top-0 z-50 bg-transparent p-2"
       initial={{ y: -100 }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3 }}
@@ -116,39 +116,38 @@ const Navbar = ({
       </motion.div>
 
       {/* laptop nav */}
-      <div className="hidden justify-center sm:flex">
-        <div className="flex space-x-4 rounded-full bg-gray-900 bg-opacity-50 px-6 py-2">
-          <button
-            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
-            onClick={scrollHandler(scrollAbout)}
-          >
-            About
-          </button>
-          <button
-            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
-            onClick={scrollHandler(scrollTech)}
-          >
-            Technical
-          </button>
-          <button
-            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
-            onClick={scrollHandler(scrollProjects)}
-          >
-            Projects
-          </button>
-          <button
-            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
-            onClick={scrollHandler(scrollExperience)}
-          >
-            Experience
-          </button>
-          <button
-            className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
-            onClick={scrollHandler(scrollEducation)}
-          >
-            Education
-          </button>
-        </div>
+
+      <div className="mx-auto flex hidden w-[40%] justify-center space-x-4 rounded-full bg-gray-950 bg-opacity-100 px-6 py-2 sm:flex">
+        <button
+          className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
+          onClick={scrollHandler(scrollAbout)}
+        >
+          About
+        </button>
+        <button
+          className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
+          onClick={scrollHandler(scrollTech)}
+        >
+          Technical
+        </button>
+        <button
+          className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
+          onClick={scrollHandler(scrollProjects)}
+        >
+          Projects
+        </button>
+        <button
+          className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
+          onClick={scrollHandler(scrollExperience)}
+        >
+          Experience
+        </button>
+        <button
+          className="rounded-3xl px-3 py-1 text-white outline-none transition-colors hover:bg-gray-900 focus:bg-blue-800"
+          onClick={scrollHandler(scrollEducation)}
+        >
+          Education
+        </button>
       </div>
     </motion.div>
   );

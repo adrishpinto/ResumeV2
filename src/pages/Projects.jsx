@@ -171,7 +171,7 @@ const ImageMap = () => {
         PROJECTS
       </section>
 
-      <section className="relative flex flex-col gap-[10vh] py-[18vh]">
+      <section className="relative flex flex-col gap-[10vh] py-[17.4vh]">
         <Card
           image={project2}
           label="Inventory Mangement System"
