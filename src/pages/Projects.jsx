@@ -39,7 +39,7 @@ const Card = ({ image, label, about, live_link, git_link, from, to, x }) => {
     amount: 0.5,
   });
   const inViewOP = useInView(ref, {
-    margin: `0px 0px -40% 0px`,
+    margin: `0px 0px -35% 0px`,
     once: false,
   });
 
@@ -166,12 +166,12 @@ const ImageMap = () => {
   return (
     <div className="roboto mt-[120px] flex min-h-screen flex-col items-center overflow-x-visible bg-black">
       <section
-        className={`sticky top-[40px] mb-[160px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
+        className={`sticky top-[40px] mb-[184px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
       >
         PROJECTS
       </section>
 
-      <section className="relative flex flex-col gap-[0vh] py-[20vh]">
+      <section className="relative flex flex-col gap-[10vh] py-[18vh]">
         <Card
           image={project2}
           label="Inventory Mangement System"
