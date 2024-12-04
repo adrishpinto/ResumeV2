@@ -103,10 +103,9 @@ function About({ isActive }) {
             animate={firstInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0 }}
           >
-            Hi, I'm Joshua, a Full-Stack Developer from Bangalore. I have great
-            intrests in problem-solving and creative design, and both frontend
-            and backend development let me explore these areas and I feel that's
-            why I have a great passion for full-stack dev.
+            Hi, I'm Joshua, a Full-Stack Developer from Bangalore. I love
+            solving problems and being creative, and working on both the
+            frontend and backend lets me do both.
           </motion.div>
         </motion.div>
 
