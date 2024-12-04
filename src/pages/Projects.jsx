@@ -166,12 +166,12 @@ const ImageMap = () => {
   return (
     <div className="roboto mt-[120px] flex min-h-screen flex-col items-center overflow-x-visible bg-black">
       <section
-        className={`sticky top-[40px] mb-[186px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
+        className={`sticky top-[40px] mb-[160px] flex justify-center text-5xl font-[900] tracking-tighter sm:top-24 md:text-7xl lg:text-[110px]`}
       >
         PROJECTS
       </section>
 
-      <section className="relative flex flex-col gap-[10vh] py-[20vh]">
+      <section className="relative flex flex-col gap-[0vh] py-[20vh]">
         <Card
           image={project2}
           label="Inventory Mangement System"
@@ -209,7 +209,6 @@ const ImageMap = () => {
           git_link="https://github.com/adrishpinto/DataVisualization"
           from="cyan-500"
           to="purple-500"
-          
         />
       </section>
     </div>
