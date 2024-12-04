@@ -132,7 +132,7 @@ function StackItemSM({ text, img, desc }) {
 
 function Stack() {
   return (
-    <div className="relative mt-28 sm:mt-52">
+    <div className="relative mb-20 mt-28 sm:mt-32">
       <div className="flex flex-col items-center">
         <div className="text-[12vw] font-bold hover:cursor-pointer sm:mb-0 sm:text-[7vw]">
           <span className="duration-300 hover:text-red-500 hover:transition">

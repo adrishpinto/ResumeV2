@@ -26,7 +26,7 @@ function Experience() {
           filter: inView1 ? "blur(0)" : "blur(10px)",
         }}
         transition={{ duration: 0.7 }}
-        className="sm:[80%] mx-auto mt-[130px] w-[90%] rounded-2xl border p-3 sm:p-10 md:w-[60%]"
+        className="sm:[80%] mx-auto mt-[50px] w-[90%] rounded-2xl border p-3 sm:p-10 md:w-[60%]"
       >
         <h1 className="mx-auto mb-5 w-fit bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-5xl text-transparent sm:mx-0 md:text-7xl">
           Infits
