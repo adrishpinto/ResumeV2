@@ -44,7 +44,7 @@ const Navbar = ({
 
   const MobileMenuItem = ({ children, onClick }) => (
     <motion.button
-      className="blclickk prounded-3xlext-left w-full outline-none transition-colors duration-200 hover:bg-gray-900 focus:bg-blue-800"
+      className="bg-opacity- w-full border-b border-white bg-gray-950 py-3 text-2xl font-thin outline-none transition-colors duration-200 hover:bg-gray-900 focus:bg-blue-800"
       onClick={() => {
         onClick();
         setNavExpand(false);
