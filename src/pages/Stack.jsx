@@ -84,7 +84,7 @@ function StackItemSM({ text, img, desc }) {
     offset: ["start end", "end start"],
   });
 
-  const scale2 = useTransform(scrollYProgress, [0, 0.6], [1.1, 1.2]);
+  const scale2 = useTransform(scrollYProgress, [0, 0.5], [1, 1.2]);
   const delayedScrollYProgress = useSpring(scrollYProgress, {
     stiffness: 80,
     damping: 20,
